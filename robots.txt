@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# This directive ensures Google and AI bots find your sitemap
+Sitemap: https://www.luxmassage.co.ke/sitemap.xml

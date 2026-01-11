@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <title>Luxmassage - Premium Massage Service in Kenya</title>
+  <meta name="description" content="Discover Luxmassage, Kenya's leading premium service for high-net-worth Men & Women. Vetted therapists, discreet luxury, and clinical safety in Nairobi, Mombasa, and Kisumu.">
+  <meta name="keywords" content="luxury massage Kenya, mobile massage Nairobi, wellness Mombasa, vetted therapists Kisumu, discreet luxury massage, prenatal massage Kenya, executive massage Nairobi, sports massage Kenya, men's wellness, executive massage Kisumu, men's spa Kisumu, deep tissue Kisumu, private massage for men Kisumu, massage in Kisumu contacts">
+  <link rel="canonical" href="https://www.luxmassage.co.ke/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.luxmassage.co.ke/" />
+  <meta property="og:title" content="Luxmassage - Premium Massage Service in Kenya" />
+  <meta property="og:description" content="Discover Luxmassage, Kenya's leading premium service for high-net-worth Men & Women. Vetted therapists, discreet luxury, and clinical safety." />
+  <meta property="og:image" content="https://www.luxmassage.co.ke/ms1.jpg" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.luxmassage.co.ke/" />
+  <meta property="twitter:title" content="Luxmassage - Premium Massage Service in Kenya" />
+  <meta property="twitter:description" content="Discover Luxmassage, Kenya's leading premium service for high-net-worth Men & Women." />
+  <meta property="twitter:image" content="https://www.luxmassage.co.ke/ms1.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* Modern Booking Modal Styles */
+    @keyframes modalBounceIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.05); }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+    .booking-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .booking-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .booking-modal {
+      background: #ffffff;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 24px;
+      padding: 0;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      transform: scale(0.8);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .modal-scroll-content {
+      padding: 1rem 2rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-width: none;
+    }
+    .modal-scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+    .booking-modal-overlay.active .booking-modal {
+      animation: modalBounceIn 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      transform: scale(1);
+      opacity: 1;
+    }
+    .modal-header-center {
+      text-align: center;
+      background-color: #000;
+      padding: 3rem 2rem 1.5rem;
+      border-radius: 24px 24px 0 0;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .modal-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    .modal-logo span { color: #d4af37; }
+    .modal-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+    .modal-subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 2px;
+    }
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f5f5f5;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+    .close-modal:hover {
+      background: #e0e0e0;
+      color: #000;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #4a4a4a;
+      font-weight: 600;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid #f0f0f0;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fafafa;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+    }
+    .btn-whatsapp-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    }
+    .modal-back-to-top {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+      width: 35px;
+      height: 35px;
+      background: #f0f0f0;
+      color: #333;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 10;
+    }
+    .modal-back-to-top:hover {
+      background: #e0e0e0;
+    }
+    .modal-back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .nav-main {
+      background-color: #000000;
+    }
+    .nav-main .menu-link, .nav-toggle {
+      color: #ffffff;
+    }
+    option.highlight-option {
+      font-weight: bold;
+      color: #d4af37; /* Gold accent color */
+    }
+    .btn-whatsapp-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+    }
+    /* Global Button Override */
+    .btn-primary, .book-btn, .advert-cta {
+      background: linear-gradient(135deg, #800020 0%, #4a0012 100%) !important;
+      color: white !important;
+      border: none !important;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Luxmassage",
+    "description": "Premium massage service specializing in discreet luxury wellness in Kenya.",
+    "image": "https://www.luxmassage.co.ke/ms1.jpg",
+    "url": "https://www.luxmassage.co.ke",
+    "telephone": "+254106358701",
+    "sameAs": [
+      "https://www.facebook.com/zilly.336565",
+      "https://wa.me/+254106358701"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE",
+      "addressLocality": "Nairobi"
+    },
+    "areaServed": [
+      {
+        "@type": "GeoShape",
+        "name": "Nairobi Metropolitan Area",
+        "description": "Serving high-net-worth clients in Nairobi, including Westlands, Karen, and Kilimani.",
+        "box": "-1.5 36.5 -1.1 37.0"
+      },
+      {
+        "@type": "Place",
+        "name": "Westlands, Nairobi"
+      },
+      {
+        "@type": "Place",
+        "name": "Karen, Nairobi"
+      },
+      {
+        "@type": "Place",
+        "name": "Kilimani, Nairobi"
+      },
+      {
+        "@type": "City",
+        "name": "Mombasa",
+        "description": "Luxury wellness services near Diani Beach and upscale coastal areas."
+      },
+      {
+        "@type": "City",
+        "name": "Diani Beach",
+        "description": "Premium mobile massage service in Diani."
+      },
+      {
+        "@type": "City",
+        "name": "Kisumu",
+        "description": "Holistic massage therapy for women near Lake Victoria and central Kisumu."
+      },
+      {
+        "@type": "Place",
+        "name": "Milimani, Kisumu"
+      }
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Prenatal Massage Therapy",
+        "description": "Certified in-home prenatal massage for expecting mothers.",
+        "priceRange": "$$$",
+        "category": "Massage Therapy"
+      },
+      {
+        "@type": "Offer",
+        "name": "Aromatherapy Stress Relief",
+        "description": "Discreet luxury aromatherapy sessions for busy professionals.",
+        "priceRange": "$$$",
+        "category": "Women's Wellness"
+      },
+      {
+        "@type": "Offer",
+        "name": "Postpartum Recovery Massage",
+        "description": "Clinical safety-focused lymphatic drainage for new mothers.",
+        "priceRange": "$$$",
+        "category": "Massage Therapy"
+      },
+      {
+        "@type": "Offer",
+        "name": "Executive Deep Tissue",
+        "description": "Therapeutic deep tissue massage tailored for men to relieve stress and muscle tension.",
+        "priceRange": "$$$",
+        "category": "Men's Wellness"
+      }
+    ],
+    "knowsAbout": [
+      {
+        "@type": "Thing",
+        "name": "Massage Therapy",
+        "description": "Expertise in therapeutic massage techniques for physical and mental wellness."
+      },
+      {
+        "@type": "Thing",
+        "name": "Women's Wellness",
+        "description": "Specialized services addressing hormonal balance, stress, and holistic health for women."
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Luxmassage Service Catalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile Massage",
+            "serviceType": "Health and Beauty"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes Luxmassage the best wellness service for women in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Luxmassage offers vetted therapists, discreet luxury, and clinical safety protocols tailored for high-net-worth women in Nairobi, Mombasa, and Kisumu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide in-home mobile massage services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our female-only therapists come to your location for maximum privacy and convenience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your services safe for prenatal and postpartum care?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely, we specialize in certified prenatal and postpartum massages with clinical safety in mind."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Nairobi (including Westlands and Karen), Mombasa (near Diani Beach), and Kisumu (near Lake Victoria)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer massage services for men?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide premium deep tissue and executive stress relief massages for high-net-worth men, delivered with strict professional protocols."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#mainContent"></a>
+
+  <!-- Top nav (Layer 1) -->
+  <div class="nav-top">
+    <div class="container nav-top-inner">
+      <div class="contact">
+        <a class="contact-phone" href="https://wa.me/+254106358701"><i class="fa fa-phone"></i> +254106358701</a>
+        <span><i class="fa fa-envelope"></i>info@luxmassage.co.ke</span>
+      </div>
+      <div class="socials">
+        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/zilly.336565" class="social-link facebook" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="social-link whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="social-link youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav (Layer 2) -->
+  <header class="nav-main">
+    <div class="container nav-main-inner">
+      <div class="brand">
+        <a href="#" class="logo"><img src="Lux Logo.jpg" alt="Lux Logo" style="height: 50px;"></a>
+      </div>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <nav class="main-menu" id="mainMenu">
+          <a class="menu-link" href="#home">Home</a>
+          <div class="menu-item-has-children">
+            <a class="menu-link" href="#services">Services <i class="fa fa-chevron-down" style="font-size: 0.7em; margin-left: 4px;"></i></a>
+            <div class="mega-menu">
+              <a href="#" class="mega-item" data-service="Deep Tissue Massage">
+                <i class="fa-solid fa-hand-sparkles"></i>
+                <span>Deep Tissue</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Swedish Massage">
+                <i class="fa-solid fa-feather"></i>
+                <span>Swedish</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Pregnancy Massage">
+                <i class="fa-solid fa-person-pregnant"></i>
+                <span>Pregnancy</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Executive Massage">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Executive (Men)</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Couples Massage">
+                <i class="fa-solid fa-heart"></i>
+                <span>Couples</span>
+              </a>
+              <a href="#" class="mega-item" data-service="VIP Experience">
+                <i class="fa-solid fa-spa"></i>
+                <span>VIP Spa</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Erotic Massage">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                <span>Erotic Massage</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Hot Stone Massage">
+                <i class="fa-solid fa-gem"></i>
+                <span>Hot Stone</span>
+              </a>
+              <a href="#" class="mega-item" data-service="Hot Bath Massage">
+                <i class="fa-solid fa-bath"></i>
+                <span>Hot Bath</span>
+              </a>
+            </div>
+          </div>
+          <a class="menu-link" href="#video">Video</a>
+          <a class="menu-link" href="pricing.html">Pricing</a>
+          <a class="menu-link" href="#gallery">Gallery</a>
+          <a class="menu-link" href="knowledgebase.html">Knowledge Base</a>
+          <a class="menu-link" href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-primary book-btn" href="#" data-service="General Inquiry">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider" id="home">
+    <div class="slider-inner">
+      <div class="slides">
+        <!-- 8 slides -->
+        <div class="slide" data-index="0"><img src="ms1.jpg" alt="Luxury massage room interior in Nairobi"></div>
+        <div class="slide" data-index="1"><img src="ms2.jpg" alt="Premium wellness spa setup with towels"></div>
+        <div class="slide" data-index="2"><img src="Gal 5.jpg" alt="Aromatherapy massage session environment"></div>
+        <div class="slide" data-index="3"><img src="ms h2.jpg" alt="Deep tissue massage therapy setting"></div>
+        <div class="slide" data-index="4"><img src="ms h.jpg" alt="Relaxing spa ambiance with candles"></div>
+        <div class="slide" data-index="5"><img src="H1.jpg" alt="Professional massage therapist hands"></div>
+        <div class="slide" data-index="6"><img src="H 01.jpg" alt="Exclusive VIP massage suite"></div>
+        <div class="slide" data-index="7"><img src="Gen2.jpg" alt="Luxmassage premium service branding"></div>
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-content container">
+          <h1>Indulge in pure relaxation</h1>
+          <p>Luxmassage stands out as Kenya's premier massage service for Men & Women of Class.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary book-btn" href="https://wa.me/+254106358701">Book Now</a>
+            <a class="btn btn-ghost" href="#services">Explore Services</a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn prev" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+      <button class="slider-btn next" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="services container" id="services">
+    <h2 class="section-title">Our Signature Services</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <img src="Gen3.jpg" alt="Erotic Massage">
+        <h3>Erotic Massage</h3>
+        <p>Discreet, intimate sessions tailored to your comfort and pleasure.</p>
+      </article>
+      <article class="service-card">
+        <img src="m2.jpeg" alt="Swedish Massage">
+        <h3>Swedish Massage</h3>
+        <p>Gentle, flowing strokes to relax and rejuvenate body and mind.</p>
+      </article>
+      <article class="service-card">
+        <img src="expectant.jfif" alt="Pregnancy Massage">
+        <h3>Pregnancy Massage</h3>
+        <p>Supportive care for mothers-to-be with specialized positioning and comfort.</p>
+      </article>
+      <article class="service-card">
+        <img src="ms h2.jpg" alt="Deep Tissue">
+        <h3>Deep Tissue</h3>
+        <p>Firm, targeted therapy to release deep muscular tension.</p>
+      </article>
+      <article class="service-card">
+        <img src="F1.jpg" alt="Full Body">
+        <h3>Full Body</h3>
+        <p>Comprehensive treatment to soothe every part of you.</p>
+      </article>
+      <article class="service-card">
+        <img src="Anti Aging.jpg" alt="Anti-Aging">
+        <h3>Anti-Aging</h3>
+        <p>Revitalizing rituals to nourish skin and promote youthful glow.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section container" id="video">
+    <h2 class="section-title">Experience the Ambiance</h2>
+    <div class="video-wrap">
+      <iframe src="Lux Vid.mp4" title="Placeholder video" frameborder="0" allowfullscreen></iframe>
+    
+
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing container" id="pricing">
+    <h2 class="section-title">Pricing Plans</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <img src="H 001.jpg" alt="Silver">
+        <h3> 30 min Free Trial</h3>
+        <p class="price">  + 60min @ 50% Off for women</p>
+           <p class="price">  + 60min @ 20% Off for Men</p>
+        <div class="countdown-wrapper">
+          <p class="countdown-label">Offer expires in:</p>
+          <div id="countdown-timer">00:00:00</div>
+        </div>
+        <a class="btn book-btn" href="#" data-service="Free Trial">Book for Free</a>
+      </div>
+      <div class="price-card">
+        <img src="H03.jpg" alt="Gold">
+        <h3>Gold</h3>
+        <p class="price">60 - 90 min</p>
+        <a class="btn book-btn" href="#" data-service="Gold Plan">Request a Quote</a>
+      </div>
+      <div class="price-card">
+        <img src="H..jpg" alt="Platinum">
+        <h3>Platinum</h3>
+        <p class="price"> 120 min</p>
+        <a class="btn book-btn" href="#" data-service="Platinum Plan">Request a Quote</a>
+      </div>
+      <div class="price-card">
+        <img src="H 02.jpg" alt="VIP">
+        <h3>VIP Experience</h3>
+        <p class="price"> Exclusive</p>
+        <a class="btn book-btn" href="#" data-service="VIP Experience">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq container" id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What makes Luxmassage the best wellness service for women in Kenya?</h3>
+        <p>Luxmassage offers vetted therapists, discreet luxury, and clinical safety protocols tailored for high-net-worth women in Nairobi, Mombasa, and Kisumu.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you provide in-home mobile massage services?</h3>
+        <p>Yes, our female-only therapists come to your location for maximum privacy and convenience.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are your services safe for prenatal and postpartum care?</h3>
+        <p>Absolutely, we specialize in certified prenatal and postpartum massages with clinical safety in mind.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What areas do you serve in Kenya?</h3>
+        <p>We serve Nairobi (including Westlands and Karen), Mombasa (near Diani Beach), and Kisumu (near Lake Victoria).</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you offer massage services for men?</h3>
+        <p>Yes, we provide premium deep tissue and executive stress relief massages for high-net-worth men, delivered with strict professional protocols.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Gallery -->
+  <section class="smart-gallery" id="gallery">
+    <h2 class="section-title container">Gallery</h2>
+    <div class="gallery-strip" aria-hidden="false">
+      <img src="Gal 01.jpg" alt="Gallery 1">
+      <img src="Gen3.jpg" alt="Gallery 2">
+      <img src="Gal 1.jfif" alt="Gallery 3">
+      <img src="Gal 3.jfif" alt="Gallery 4">
+      <img src="Gen1.jpg" alt="Gallery 5">
+      <img src="Gent1.jpg" alt="Gallery 6">
+    </div>
+  </section>
+
+  <!-- Banner Advert -->
+  <div class="banner-ad container">
+    <p>Special Seasonal Offer: 50% off your first VIP booking — use code <strong>LUX20</strong>.</p>
+    <a class="btn btn-primary book-btn" href="https://wa.me/+254106358701" data-service="Seasonal Offer">Redeem Offer</a>
+  </div>
+
+  <!-- Popup Advert (hidden by default) -->
+  <div id="popup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-inner">
+      <button class="popup-close" aria-label="Close">&times;</button>
+      <h3>Welcome to Lux Massage</h3>
+      <p>Enjoy a complimentary aromatherapy upgrade with your first booking. Tap to claim.</p>
+      <a class="btn btn-primary book-btn" href="https://wa.me/+254106358701">Book via WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Advert Popups (rotating) -->
+  <div id="adverts" class="advert-overlay">
+    <div class="advert-inner">
+      <!-- Advert 1 -->
+      <div class="advert-card" data-key="1">
+        <button class="advert-close" aria-label="Close">&times;</button>
+        <img src="m1.jpg" alt="Grap Holidays Offers">
+        <div class="advert-body">
+          <h3>Grap Holidays & Weekend Offers</h3>
+          <p>Exclusive Holiday | Weekend packages & pamper deals — limited time. Book now to save.</p>
+          <a class="btn btn-primary advert-cta" href="https://wa.me/+254106358701" data-service="Holiday / Weekend Offer">Claim Offer</a>
+        </div>
+      </div>
+      <!-- Advert 2 -->
+      <div class="advert-card" data-key="2">
+        <button class="advert-close" aria-label="Close">&times;</button>
+        <img src="Biz Post.jfif" alt="Request to post your Business">
+        <div class="advert-body">
+          <h3>Request to Post Your Business</h3>
+          <p>Promote your wellness business on our platform — reach new clients today.</p>
+          <a class="btn btn-primary advert-cta" href="https://wa.me/+254106358701" data-service="Post Your Business">Post Your Business</a>
+        </div>
+      </div>
+      <!-- Advert 3 -->
+      <div class="advert-card" data-key="3">
+        <button class="advert-close" aria-label="Close">&times;</button>
+        <img src="ms cal.jpg" alt="Register as a Spa">
+        <div class="advert-body">
+          <h3>Register as a Spa</h3>
+          <p>Join our network and help serve our growing client base. Simple onboarding.</p>
+          <a class="btn btn-primary advert-cta" href="https://wa.me/+254106358701" data-service="Register as a Spa">Register a Spa</a>
+        </div>
+      </div>
+      <!-- Advert 4 -->
+      <div class="advert-card" data-key="4">
+        <button class="advert-close" aria-label="Close">&times;</button>
+        <img src="MS masu.jpg" alt="Register as a Private Masseuse">
+        <div class="advert-body">
+          <h3>Register as a Private Masseuse</h3>
+          <p>Offer your private services via our platform — flexible scheduling & support.</p>
+          <a class="btn btn-primary advert-cta" href="https://wa.me/+254106358701" data-service="Register as a Private Masseuse">Register Now</a>
+        </div>
+      </div>
+      <!-- Advert 5 -->
+      <div class="advert-card" data-key="5">
+        <button class="advert-close" aria-label="Close">&times;</button>
+        <img src="biki2.jpg" alt="Something Special">
+        <div class="advert-body">
+          <h3>Something Special?</h3>
+          <p>You want something special off the Service List? Tell us — we’ll design it.</p>
+          <a class="btn btn-primary advert-cta" href="https://wa.me/+254106358701" data-service="Custom Request">Tell Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="large">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo"><img src="Lux Logo.jpg" alt="Lux Logo" style="height: 50px;"></a>
+        <p>Luxurious massages crafted for women. Calm, privacy, and exquisite service.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: <a href="https://wa.me/+254106358701">+254106358701</a></p>
+        <p>Email: info@luxmassage.co.ke</p>
+        <p>Serving: Nairobi (Westlands, Karen), Mombasa (Nyali, Diani), Kisumu (Milimani).</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="footer-socials">
+          <a href="#" class="social-link instagram"><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href="https://www.facebook.com/zilly.336565" class="social-link facebook"><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href="#" class="social-link tiktok"><i class="fa-brands fa-tiktok fa-2x"></i></a>
+          <a href="#" class="social-link youtube"><i class="fa-brands fa-youtube fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>&copy; 2025 LuxMassage. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA -->
+  <a class="floating-whatsapp" href="https://wa.me/+254106358701" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Cookie consent -->
+  <div id="cookieBar" class="cookie-bar" aria-hidden="false">
+    <div class="container cookie-inner">
+      <p>We use cookies to improve your experience. By continuing you accept our use of cookies.</p>
+      <div class="cookie-actions">
+        <a href="#" class="btn cookie-btn" id="acceptCookies">Accept</a>
+        <a href="#privacy" class="cookie-link">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Booking Modal -->
+  <div id="bookingModal" class="booking-modal-overlay">
+    <div class="booking-modal">
+      <button class="close-modal" aria-label="Close">&times;</button>
+      <div class="modal-header-center">
+        <img src="Lux Logo.jpg" alt="Lux Logo" style="display: block; margin: 0 auto 1rem auto; max-width: 180px;">
+        <div class="modal-subtitle">Place your Booking Now | Get an Inquiry</div>
+      </div>
+      <div class="modal-scroll-content">
+      <form id="whatsappBookingForm">
+        <div class="form-group">
+          <label for="clientName">Your Name</label>
+          <input type="text" id="clientName" class="form-control" placeholder="e.g. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="serviceType">Service Required</label>
+          <select id="serviceType" class="form-control">
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Deep Tissue Massage">Deep Tissue Massage</option>
+            <option value="Swedish Massage">Swedish Massage</option>
+            <option value="Pregnancy Massage">Pregnancy Massage</option>
+            <option value="Executive Massage">Executive Massage (Men)</option>
+            <option value="Couples Massage">Couples Massage</option>
+            <option value="VIP Experience">VIP Experience</option>
+            <option value="Erotic Massage">Erotic Massage</option>
+            <option value="Hot Stone Massage">Hot Stone Massage</option>
+            <option value="Hot Bath Massage">Hot Bath Massage</option>
+            <option value="Free Trial">Free Trial</option>
+            <option value="Gold Plan">Gold Plan</option>
+            <option value="Platinum Plan">Platinum Plan</option>
+            <option value="Seasonal Offer" class="highlight-option">Seasonal Offer ★</option>
+            <option value="Holiday / Weekend Offer">Holiday / Weekend Offer</option>
+            <option value="Post Your Business">Post Your Business</option>
+            <option value="Register as a Spa">Register as a Spa</option>
+            <option value="Register as a Private Masseuse">Register as a Private Masseuse</option>
+            <option value="Custom Request">Custom Request</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="clientLocation">Location</label>
+          <select id="clientLocation" class="form-control">
+            <option value="Nairobi">Nairobi</option>
+            <option value="Mombasa">Mombasa</option>
+            <option value="Kisumu">Kisumu</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="clientDate">Preferred Date & Time</label>
+          <input type="datetime-local" id="clientDate" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="clientNotes">Additional Notes</label>
+          <textarea id="clientNotes" class="form-control" rows="3" placeholder="Any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn-whatsapp-submit">
+          <i class="fa-brands fa-whatsapp fa-lg"></i> Send via WhatsApp
+        </button>
+      </form>
+      </div>
+      <button type="button" class="modal-back-to-top" id="modalBackToTop" aria-label="Back to Top"><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('bookingModal');
+      const closeBtn = modal.querySelector('.close-modal');
+      const form = document.getElementById('whatsappBookingForm');
+      
+      // Select all buttons that should trigger the modal
+      // Including the floating WhatsApp button and any 'book-btn'
+      const triggers = document.querySelectorAll('.book-btn, .floating-whatsapp, .advert-cta');
+      
+      triggers.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault(); // Stop direct WhatsApp link
+          
+          // Auto-select service if button has data-service attribute
+          const service = this.getAttribute('data-service');
+          const select = document.getElementById('serviceType');
+          if (service && select) select.value = service;
+
+          modal.classList.add('active');
+        });
+      });
+
+      // Mega Menu Click Handler
+      const megaItems = document.querySelectorAll('.mega-item');
+      megaItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const service = this.getAttribute('data-service');
+          const select = document.getElementById('serviceType');
+          if (service) select.value = service;
+          modal.classList.add('active');
+        });
+      });
+
+      // Close modal logic
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+
+      // Back to Top in Modal
+      const scrollContainer = modal.querySelector('.modal-scroll-content');
+      const backToTopBtn = document.getElementById('modalBackToTop');
+      
+      if (scrollContainer && backToTopBtn) {
+        scrollContainer.addEventListener('scroll', () => {
+          if (scrollContainer.scrollTop > 200) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+          scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Handle Form Submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('clientName').value;
+        const service = document.getElementById('serviceType').value;
+        const location = document.getElementById('clientLocation').value;
+        const date = document.getElementById('clientDate').value;
+        const notes = document.getElementById('clientNotes').value;
+        
+        // Format the WhatsApp message
+        const message = `*New Booking Request*\n\n` +
+                        `*Name:* ${name}\n` +
+                        `*Service:* ${service}\n` +
+                        `*Location:* ${location}\n` +
+                        `*Preferred Date:* ${date}\n` +
+                        `*Notes:* ${notes}`;
+                        
+        const whatsappUrl = `https://wa.me/+254106358701?text=${encodeURIComponent(message)}`;
+        
+        window.open(whatsappUrl, '_blank');
+        modal.classList.remove('active');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

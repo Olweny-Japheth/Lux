@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <title>Pricing Plans - Luxmassage Kenya</title>
+  <meta name="description" content="View our premium massage pricing plans. From free trials to VIP experiences in Nairobi, Mombasa, and Kisumu.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* Modern Booking Modal Styles (Inline for consistency) */
+    @keyframes modalBounceIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.05); }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+    .booking-modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 10000;
+      display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;
+    }
+    .booking-modal-overlay.active { display: flex; opacity: 1; }
+    .booking-modal {
+      background: #ffffff; width: 90%; max-width: 500px; border-radius: 24px; padding: 0;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); transform: scale(0.8); opacity: 0; transition: all 0.3s ease-in-out;
+      position: relative; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; text-align: left;
+    }
+    .modal-scroll-content {
+      padding: 1rem 2rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+      scrollbar-width: none;
+    }
+    .modal-scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+    .booking-modal-overlay.active .booking-modal {
+      animation: modalBounceIn 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      transform: scale(1); opacity: 1;
+    }
+    .modal-header-center {
+      text-align: center;
+      background-color: #000;
+      padding: 3rem 2rem 1.5rem;
+      border-radius: 24px 24px 0 0;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .modal-logo { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    .modal-logo span { color: #d4af37; }
+    .modal-subtitle { font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: #fff; text-transform: uppercase; letter-spacing: 1px; position: relative; display: inline-block; padding-bottom: 10px; font-weight: 600; }
+    .modal-subtitle::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: #d4af37; border-radius: 2px; }
+    .close-modal { position: absolute; top: 20px; right: 20px; background: #f5f5f5; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; color: #666; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .close-modal:hover { background: #e0e0e0; color: #000; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: #4a4a4a; font-weight: 600; }
+    .form-control { width: 100%; padding: 0.8rem 1rem; border: 2px solid #f0f0f0; border-radius: 10px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; background: #fafafa; }
+    .form-control:focus { outline: none; border-color: #d4af37; background: #fff; box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1); }
+    .btn-whatsapp-submit { width: 100%; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; padding: 1rem; border-radius: 10px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.8rem; transition: transform 0.2s, box-shadow 0.2s; margin-top: 1.5rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+    .btn-whatsapp-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+    option.highlight-option { font-weight: bold; color: #d4af37; }
+    .modal-back-to-top {
+      position: absolute; bottom: 1rem; right: 1.5rem; width: 35px; height: 35px;
+      background: #f0f0f0; color: #333; border-radius: 50%; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+      opacity: 0; visibility: hidden; z-index: 10;
+    }
+    .modal-back-to-top:hover { background: #e0e0e0; }
+    .modal-back-to-top.show { opacity: 1; visibility: visible; }
+
+    /* --- Theme Styling (Logo Colors: Black, Gold, Rose) --- */
+    :root {
+      --brand-black: #000000;
+      --brand-gold: #d4af37;
+      --brand-rose: #d4af37;
+      --brand-white: #ffffff;
+    }
+    body { font-family: 'Poppins', sans-serif; color: #333; }
+    h1, h2, h3, h4, .section-title { font-family: 'Playfair Display', serif; }
+    
+    /* Navigation */
+    .nav-main { background-color: var(--brand-black); }
+    .nav-main .menu-link { color: var(--brand-white); transition: color 0.3s; }
+    .nav-main .menu-link:hover { color: var(--brand-rose); }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('ms1.jpg');
+      background-size: cover; background-position: center;
+      color: var(--brand-white); padding: 6rem 1rem; text-align: center;
+    }
+    .hero h1 { color: var(--brand-gold); font-size: 3.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* Pricing Cards */
+    .price-card {
+      background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-color: var(--brand-rose);
+    }
+    .price-card h3 { color: var(--brand-black); margin-top: 1rem; font-weight: 700; }
+    .price-card .price { color: var(--brand-rose); font-weight: 600; }
+    
+    .price-card.popular { border: 2px solid var(--brand-gold); position: relative; }
+    .most-popular-badge { background: var(--brand-gold); color: #000; font-weight: 700; padding: 5px 10px; text-transform: uppercase; font-size: 0.8rem; position: absolute; top: 0; right: 0; border-bottom-left-radius: 10px; }
+
+    /* Buttons */
+    .btn.book-btn {
+      background-color: var(--brand-rose); color: #fff; padding: 10px 25px; border-radius: 30px;
+      text-decoration: none; display: inline-block; margin-top: 15px; transition: background 0.3s;
+    }
+    .btn.book-btn:hover { background-color: #b8962e; }
+
+    /* Comparison Table */
+    .comparison { margin-top: 4rem; margin-bottom: 4rem; }
+    .pricing-table { width: 100%; border-collapse: collapse; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+    .pricing-table th {
+      background-color: var(--brand-black); color: var(--brand-gold); padding: 1.5rem; font-size: 1.1rem;
+    }
+    .pricing-table td { padding: 1rem; border-bottom: 1px solid #eee; text-align: center; }
+    .pricing-table td:first-child { text-align: left; font-weight: 600; color: #555; }
+    .pricing-table .fa-check { color: var(--brand-rose); }
+    .pricing-table .fa-times { color: #ddd; }
+    
+    /* Footer Links */
+    footer a:hover { color: var(--brand-rose) !important; }
+  </style>
+</head>
+<body class="page-pricing">
+
+  <!-- Main nav -->
+  <header class="nav-main">
+    <div class="container nav-main-inner">
+      <div class="brand">
+        <a href="#" class="logo"><img src="Lux Logo.jpg" alt="Lux Logo" style="height: 50px;"></a>
+      </div>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <nav class="main-menu" id="mainMenu">
+          <a class="menu-link" href="index.html">Home</a>
+          <a class="menu-link" href="index.html#services">Services</a>
+          <a class="menu-link" href="pricing.html">Pricing</a>
+          <a class="menu-link" href="index.html#gallery">Gallery</a>
+          <a class="menu-link" href="knowledgebase.html">Knowledge Base</a>
+          <a class="menu-link" href="index.html#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn btn-primary book-btn" href="#" data-service="General Inquiry">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Pricing Plans</h1>
+    <p>Transparent, premium pricing for your wellness journey.</p>
+  </section>
+
+  <!-- Pricing Grid -->
+  <section class="pricing container">
+    <div class="pricing-page-grid">
+      <!-- Card 1: Free Trial -->
+      <div class="price-card">
+        <img src="H 001.jpg" alt="Silver">
+        <h3>30 min Free Trial</h3>
+        <p class="price">+ 60min @ 50% Off for women</p>
+        <p class="price">+ 60min @ 20% Off for Men</p>
+        <div class="countdown-wrapper">
+          <p class="countdown-label">Offer expires in:</p>
+          <div id="countdown-timer">00:00:00</div>
+        </div>
+        <a class="btn book-btn" href="#" data-service="Free Trial">Book for Free</a>
+      </div>
+
+      <!-- Card 2: Gold (Most Popular) -->
+      <div class="price-card popular">
+        <div class="most-popular-badge">Most Popular</div>
+        <img src="H03.jpg" alt="Gold">
+        <h3>Gold</h3>
+        <p class="price">60 - 90 min</p>
+        <a class="btn book-btn" href="#" data-service="Gold Plan">Request a Quote</a>
+      </div>
+
+      <!-- Card 3: Platinum -->
+      <div class="price-card">
+        <img src="H..jpg" alt="Platinum">
+        <h3>Platinum</h3>
+        <p class="price">120 min</p>
+        <a class="btn book-btn" href="#" data-service="Platinum Plan">Request a Quote</a>
+      </div>
+
+      <!-- Card 4: VIP (Centered Below) -->
+      <div class="price-card">
+        <img src="H 02.jpg" alt="VIP">
+        <h3>VIP Experience</h3>
+        <p class="price">Exclusive</p>
+        <a class="btn book-btn" href="#" data-service="VIP Experience">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="comparison container">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Compare Features</h2>
+    <div class="table-responsive">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th>Free Trial</th>
+            <th>Gold</th>
+            <th>Platinum</th>
+            <th>VIP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Duration</td>
+            <td>30 Min</td>
+            <td>60 - 90 Min</td>
+            <td>120 Min</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Consultation</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td>Deep Tissue / Swedish</td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td>Aromatherapy Oils</td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td>Priority Booking</td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+          <tr>
+            <td>Refreshments</td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="large">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo"><img src="Lux Logo.jpg" alt="Lux Logo" style="height: 50px;"></a>
+        <p>Luxurious massages crafted for women. Calm, privacy, and exquisite service.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Phone: <a href="https://wa.me/+254106358701">+254106358701</a></p>
+        <p>Email: info@luxmassage.co.ke</p>
+        <p>Serving: Nairobi (Westlands, Karen), Mombasa (Nyali, Diani), Kisumu (Milimani).</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="footer-socials">
+          <a href="#" class="social-link instagram"><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href="https://www.facebook.com/zilly.336565" class="social-link facebook"><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href="#" class="social-link tiktok"><i class="fa-brands fa-tiktok fa-2x"></i></a>
+          <a href="#" class="social-link youtube"><i class="fa-brands fa-youtube fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>&copy; 2025 LuxMassage. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA -->
+  <a class="floating-whatsapp" href="https://wa.me/+254106358701" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Modern Booking Modal -->
+  <div id="bookingModal" class="booking-modal-overlay">
+    <div class="booking-modal">
+      <button class="close-modal" aria-label="Close">&times;</button>
+      <div class="modal-header-center">
+        <img src="Lux Logo.jpg" alt="Lux Logo" style="display: block; margin: 0 auto 1rem auto; max-width: 180px;">
+        <div class="modal-subtitle">Place your Booking Now | Get an Inquiry</div>
+      </div>
+      <div class="modal-scroll-content">
+      <form id="whatsappBookingForm">
+        <div class="form-group">
+          <label for="clientName">Your Name</label>
+          <input type="text" id="clientName" class="form-control" placeholder="e.g. Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="serviceType">Service Required</label>
+          <select id="serviceType" class="form-control">
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Deep Tissue Massage">Deep Tissue Massage</option>
+            <option value="Swedish Massage">Swedish Massage</option>
+            <option value="Pregnancy Massage">Pregnancy Massage</option>
+            <option value="Executive Massage">Executive Massage (Men)</option>
+            <option value="Couples Massage">Couples Massage</option>
+            <option value="VIP Experience">VIP Experience</option>
+            <option value="Erotic Massage">Erotic Massage</option>
+            <option value="Hot Stone Massage">Hot Stone Massage</option>
+            <option value="Hot Bath Massage">Hot Bath Massage</option>
+            <option value="Free Trial">Free Trial</option>
+            <option value="Gold Plan">Gold Plan</option>
+            <option value="Platinum Plan">Platinum Plan</option>
+            <option value="Seasonal Offer" class="highlight-option">Seasonal Offer ★</option>
+            <option value="Holiday / Weekend Offer">Holiday / Weekend Offer</option>
+            <option value="Post Your Business">Post Your Business</option>
+            <option value="Register as a Spa">Register as a Spa</option>
+            <option value="Register as a Private Masseuse">Register as a Private Masseuse</option>
+            <option value="Custom Request">Custom Request</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="clientLocation">Location</label>
+          <select id="clientLocation" class="form-control">
+            <option value="Nairobi">Nairobi</option>
+            <option value="Mombasa">Mombasa</option>
+            <option value="Kisumu">Kisumu</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="clientDate">Preferred Date & Time</label>
+          <input type="datetime-local" id="clientDate" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="clientNotes">Additional Notes</label>
+          <textarea id="clientNotes" class="form-control" rows="3" placeholder="Any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn-whatsapp-submit">
+          <i class="fa-brands fa-whatsapp fa-lg"></i> Send via WhatsApp
+        </button>
+      </form>
+      </div>
+      <button type="button" class="modal-back-to-top" id="modalBackToTop" aria-label="Back to Top"><i class="fa fa-arrow-up"></i></button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('bookingModal');
+      const closeBtn = modal.querySelector('.close-modal');
+      const form = document.getElementById('whatsappBookingForm');
+      
+      const triggers = document.querySelectorAll('.book-btn, .floating-whatsapp');
+      
+      triggers.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const service = this.getAttribute('data-service');
+          const select = document.getElementById('serviceType');
+          if (service && select) select.value = service;
+          modal.classList.add('active');
+        });
+      });
+
+      closeBtn.addEventListener('click', () => { modal.classList.remove('active'); });
+      modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+      // Back to Top in Modal
+      const scrollContainer = modal.querySelector('.modal-scroll-content');
+      const backToTopBtn = document.getElementById('modalBackToTop');
+      
+      if (scrollContainer && backToTopBtn) {
+        scrollContainer.addEventListener('scroll', () => {
+          if (scrollContainer.scrollTop > 200) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+          scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('clientName').value;
+        const service = document.getElementById('serviceType').value;
+        const location = document.getElementById('clientLocation').value;
+        const date = document.getElementById('clientDate').value;
+        const notes = document.getElementById('clientNotes').value;
+        
+        const message = `*New Booking Request*\n\n*Name:* ${name}\n*Service:* ${service}\n*Location:* ${location}\n*Preferred Date:* ${date}\n*Notes:* ${notes}`;
+        const whatsappUrl = `https://wa.me/+254106358701?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        modal.classList.remove('active');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

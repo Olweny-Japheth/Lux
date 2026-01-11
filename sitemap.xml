@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.luxmassage.co.ke/</loc>
+    <lastmod>2024-05-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/ms1.jpg</image:loc>
+      <image:title>Luxury massage room interior in Nairobi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/ms2.jpg</image:loc>
+      <image:title>Premium wellness spa setup with towels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/Gal%205.jpg</image:loc>
+      <image:title>Aromatherapy massage session environment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/ms%20h2.jpg</image:loc>
+      <image:title>Deep tissue massage therapy setting</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/ms%20h.jpg</image:loc>
+      <image:title>Relaxing spa ambiance with candles</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/H1.jpg</image:loc>
+      <image:title>Professional massage therapist hands</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/H%2001.jpg</image:loc>
+      <image:title>Exclusive VIP massage suite</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.luxmassage.co.ke/Gen2.jpg</image:loc>
+      <image:title>Luxmassage premium service branding</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.luxmassage.co.ke/knowledgebase.html</loc>
+    <lastmod>2024-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
